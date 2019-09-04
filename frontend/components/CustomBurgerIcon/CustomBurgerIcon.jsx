@@ -1,5 +1,7 @@
 import React from 'react';
-import { BurgerSvg } from '../../config';
+import getConfig from '../../helpers/getConfig';
+
+const { BurgerSvg } = getConfig();
 
 /**
  * The home icon component.

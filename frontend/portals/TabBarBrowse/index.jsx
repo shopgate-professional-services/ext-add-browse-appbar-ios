@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import { HideTabBarBrowse } from '../../config';
+import getConfig from '../../helpers/getConfig';
+
+const { HideTabBarBrowse } = getConfig();
 
 /**
  * The home icon component.

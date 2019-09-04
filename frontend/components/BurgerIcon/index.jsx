@@ -7,7 +7,9 @@ import { BROWSE_PATH } from '../../constants';
 import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon/CustomBurgerIcon';
-import { BurgerSvg } from '../../config';
+import getConfig from '../../helpers/getConfig';
+
+const { BurgerSvg } = getConfig();
 
 /**
  * Component to show the Burger icon that links to the Browse page
