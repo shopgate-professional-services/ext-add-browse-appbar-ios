@@ -6,7 +6,7 @@ import Ripple from '@shopgate/pwa-ui-shared/Ripple';
 import { BROWSE_PATH } from '../../constants';
 import styles from './style';
 import connect from './connector';
-import CustomBurgerIcon from '../CustomBurgerIcon/CustomBurgerIcon';
+import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
 
 const { BurgerSvg } = getConfig();
