@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isIOSTheme } from '@shopgate-ps/pwa-extension-kit/env/helpers';
 import BurgerIcon from '../../components/BurgerIcon';
+
+const isIOS = isIOSTheme();
 
 /**
  * @param {Node} children Portal children.
@@ -8,7 +11,7 @@ import BurgerIcon from '../../components/BurgerIcon';
  */
 const AppBarIcons = ({ children }) => (
   <div style={{ display: 'flex' }}>
-    <BurgerIcon />
+    {isIOS && <BurgerIcon /> }
     {children}
   </div>
 );
