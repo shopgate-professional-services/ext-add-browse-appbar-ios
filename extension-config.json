@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "id": "@shopgate-project/ext-add-browse-appbar-ios",
+  "components": [
+    {
+      "type": "portals",
+      "target": "app-bar.right",
+      "path": "frontend/portals/AppBarIcons",
+      "id": "AppBarIcons"
+    },
+    {
+      "type": "portals",
+      "target": "tab-bar.browse",
+      "path": "frontend/portals/TabBarBrowse",
+      "id": "TabBarBrowse"
+    }
+  ],
+  "configuration": {
+    "BurgerSvg": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "",
+      "params": {
+        "label": "SVG of the Custom Burger Icon",
+        "type": "text"
+      }
+    },
+    "HideTabBarBrowse": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": false,
+      "params": {
+        "type": "checkbox",
+        "label": "Set to hide the TabBar Browse."
+      }
+    }
+  }
+}
