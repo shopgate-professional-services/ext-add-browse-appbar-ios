@@ -15,6 +15,20 @@ const button = css({
   zIndex: 1,
 }).toString();
 
+const buttonHome = css({
+  position: 'absolute',
+  right: 0,
+  top: 0,
+  color: 'inherit',
+  fontSize: '1.5rem',
+  lineHeight: 1,
+  outline: 0,
+  padding: 0,
+  minWidth: variables.navigator.height,
+  height: variables.navigator.height,
+  zIndex: 1,
+}).toString();
+
 const buttonContent = css({
   display: 'flex',
   height: '100%',
@@ -30,5 +44,6 @@ const customBurgerIcon = css({
 export default {
   button,
   buttonContent,
+  buttonHome,
   customBurgerIcon,
 };

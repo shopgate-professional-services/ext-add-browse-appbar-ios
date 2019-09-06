@@ -1,6 +1,6 @@
 {
   "name": "@shopgate-project/ext-add-browse-appbar-ios",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Will render a Burger Icon with browse function on the right side of the App Bar of the iOS theme.",
   "license": "Apache-2.0",
   "scripts": {
