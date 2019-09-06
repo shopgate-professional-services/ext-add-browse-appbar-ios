@@ -17,6 +17,7 @@ const { BurgerSvg } = getConfig();
 class Burger extends Component {
   static propTypes = {
     historyPush: PropTypes.func.isRequired,
+    isHome: PropTypes.bool.isRequired,
     isVisible: PropTypes.bool.isRequired,
     state: PropTypes.shape(),
   };
@@ -47,7 +48,7 @@ class Burger extends Component {
 
     return (
       <Button
-        className={styles.button}
+        className={this.props.isHome ? styles.buttonHome : styles.button}
       >
         <Ripple
           className={styles.buttonContent}

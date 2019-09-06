@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { historyPush } from '@shopgate/pwa-common/actions/router';
-import { isBurgerIconVisible } from '../../selectors';
+import { isBurgerIconVisible, isHome } from '../../selectors';
 
 /**
  * Maps the contents of the state to the component props.
@@ -9,6 +9,7 @@ import { isBurgerIconVisible } from '../../selectors';
  */
 const mapStateToProps = state => ({
   isVisible: isBurgerIconVisible(state),
+  isHome: isHome(state),
 });
 
 const mapDispatchToProps = {

@@ -11,3 +11,12 @@ export const isBurgerIconVisible = createSelector(
   currentRoute => !burgerIconBlacklist.find(entry => currentRoute.pattern.startsWith(entry))
 );
 
+export const isHome = createSelector(
+  getCurrentRoute,
+  (route) => {
+    if (route.pattern === '/') {
+      return true;
+    }
+    return false;
+  }
+);
