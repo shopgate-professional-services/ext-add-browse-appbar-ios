@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { getCurrentRoute } from '@shopgate/pwa-common/selectors/router';
+import { INDEX_PATH } from '@shopgate/pwa-common/constants/RoutePaths';
 import { burgerIconBlacklist } from '../constants';
 
 /**
@@ -14,7 +15,7 @@ export const isBurgerIconVisible = createSelector(
 export const isHome = createSelector(
   getCurrentRoute,
   (route) => {
-    if (route.pattern === '/') {
+    if (route.pattern === INDEX_PATH) {
       return true;
     }
     return false;
