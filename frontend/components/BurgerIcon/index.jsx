@@ -8,9 +8,8 @@ import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
-import {HamburgerMenuRoute} from '../../config.json'
 
-const { BurgerSvg } = getConfig();
+const { BurgerSvg, HamburgerMenuRoute } = getConfig();
 /**
  * Component to show the Burger icon that links to the Browse page
  */
