@@ -8,9 +8,9 @@ import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
+import {HamburgerMenuRoute} from '../../config.json'
 
 const { BurgerSvg } = getConfig();
-
 /**
  * Component to show the Burger icon that links to the Browse page
  */
@@ -31,7 +31,7 @@ class Burger extends Component {
    */
   handleClick = () => {
     const params = {
-      pathname: BROWSE_PATH,
+      pathname: HamburgerMenuRoute? HamburgerMenuRoute : BROWSE_PATH,
       state: this.props.state || {},
     };
     this.props.historyPush(params);

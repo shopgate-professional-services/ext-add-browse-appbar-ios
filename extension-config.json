@@ -33,6 +33,15 @@
         "type": "checkbox",
         "label": "Set to hide the TabBar Browse."
       }
+    },
+    "HamburgerMenuRoute": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": null,
+      "params": {
+        "type": "route",
+        "label": "Set Hamburger menu Route."
+      }
     }
   }
 }
