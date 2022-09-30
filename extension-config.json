@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "id": "@shopgate-project/ext-add-browse-appbar-ios",
   "components": [
     {
@@ -32,6 +32,15 @@
       "params": {
         "type": "checkbox",
         "label": "Set to hide the TabBar Browse."
+      }
+    },
+    "HamburgerMenuRoute": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": null,
+      "params": {
+        "type": "route",
+        "label": "Set Hamburger menu Route."
       }
     }
   }
