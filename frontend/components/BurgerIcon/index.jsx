@@ -8,6 +8,7 @@ import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
+import { i18n } from '@shopgate/engage/core';
 
 const { BurgerSvg, HamburgerMenuRoute } = getConfig();
 /**
@@ -48,6 +49,7 @@ class Burger extends Component {
     return (
       <Button
         className={this.props.isHome ? styles.buttonHome : styles.button}
+        aria-label={i18n.text('add_browse_appbar_ios.button_label')}
       >
         <Ripple
           className={styles.buttonContent}
