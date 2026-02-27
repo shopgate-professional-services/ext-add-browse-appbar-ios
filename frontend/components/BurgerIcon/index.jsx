@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Button from '@shopgate/pwa-common/components/Button';
 import BurgerIcon from '@shopgate/pwa-ui-shared/icons/BurgerIcon';
 import Ripple from '@shopgate/pwa-ui-shared/Ripple';
-import { BROWSE_PATH } from '../../constants';
+import SurroundPortals from '@shopgate/pwa-common/components/SurroundPortals';
+import { BROWSE_PATH, PORTAL_BURGER_ICON_CONTENT } from '../../constants';
 import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon';
@@ -51,12 +52,14 @@ class Burger extends Component {
         className={this.props.isHome ? styles.buttonHome : styles.button}
         aria-label={i18n.text('add_browse_appbar_ios.button_label')}
       >
-        <Ripple
-          className={styles.buttonContent}
-          onComplete={this.handleClick}
-        >
-          {BurgerSvg ? <CustomBurgerIcon className={styles.customBurgerIcon} /> : <BurgerIcon />}
-        </Ripple>
+        <SurroundPortals portalName={PORTAL_BURGER_ICON_CONTENT}>
+          <Ripple
+            className={styles.buttonContent}
+            onComplete={this.handleClick}
+          >
+            {BurgerSvg ? <CustomBurgerIcon className={styles.customBurgerIcon} /> : <BurgerIcon />}
+          </Ripple>
+        </SurroundPortals>
       </Button>
     );
   }

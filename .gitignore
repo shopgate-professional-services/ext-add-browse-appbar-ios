@@ -62,5 +62,12 @@ typings/
 .vscode/
 
 package-lock.json
-frontend/config.json
+.DS_Store
+build
+.idea/
+npm-debug.log
+extension/coverage
+extension/node_modules
 extension/config.json
+frontend/config.json
+config.json
