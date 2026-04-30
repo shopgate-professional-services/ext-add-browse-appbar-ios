@@ -9,7 +9,7 @@ const { BurgerSvg } = getConfig();
  * @returns {JSX}
  */
 const CustomBurgerIcon = props => (
-  <div {...props} dangerouslySetInnerHTML={{ __html: BurgerSvg }} />
+  <div {...props} dangerouslySetInnerHTML={{ __html: BurgerSvg }} className='sg-appbar__custom-icon' />
 );
 
 export default CustomBurgerIcon;
