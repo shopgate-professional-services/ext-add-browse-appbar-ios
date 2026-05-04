@@ -32,7 +32,7 @@ class Burger extends Component {
    */
   handleClick = () => {
     const params = {
-      pathname: HamburgerMenuRoute ? HamburgerMenuRoute : BROWSE_PATH,
+      pathname: HamburgerMenuRoute || BROWSE_PATH,
       state: this.props.state || {},
     };
     this.props.historyPush(params);
@@ -49,7 +49,10 @@ class Burger extends Component {
 
     return (
       <Button
-        className={`${this.props.isHome ? styles.buttonHome : styles.button} sg-appbar__burger-button`}
+        className={`${this.props.isHome
+          ? `${styles.buttonHome} sg-home-button`
+          : styles.button
+          } sg-appbar__burger-button`}
         aria-label={i18n.text('add_browse_appbar_ios.button_label')}
       >
         <SurroundPortals portalName={PORTAL_BURGER_ICON_CONTENT}>
@@ -57,7 +60,7 @@ class Burger extends Component {
             className={styles.buttonContent}
             onComplete={this.handleClick}
           >
-            {BurgerSvg ? <CustomBurgerIcon className={styles.customBurgerIcon} /> : <BurgerIcon className='sg-appbar__burger-icon' />}
+            {BurgerSvg ? <CustomBurgerIcon className={styles.customBurgerIcon} /> : <BurgerIcon className="sg-appbar__burger-icon" />}
           </Ripple>
         </SurroundPortals>
       </Button>
