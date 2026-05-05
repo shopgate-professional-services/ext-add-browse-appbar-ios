@@ -50,7 +50,7 @@ class Burger extends Component {
     return (
       <Button
         className={`${this.props.isHome
-          ? `${styles.buttonHome} sg-appbar__burger-button__home`
+          ? `${styles.buttonHome} sg-appbar__burger-button--home`
           : styles.button
         } sg-appbar__burger-button`}
         aria-label={i18n.text('add_browse_appbar_ios.button_label')}
