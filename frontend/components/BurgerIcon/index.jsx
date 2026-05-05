@@ -60,7 +60,9 @@ class Burger extends Component {
             className={styles.buttonContent}
             onComplete={this.handleClick}
           >
-            {BurgerSvg ? <CustomBurgerIcon className={styles.customBurgerIcon} /> : <BurgerIcon className="sg-appbar__burger-icon" />}
+            {BurgerSvg
+              ? <CustomBurgerIcon className={`${styles.customBurgerIcon} sg-appbar__burger-button-icon`} />
+              : <BurgerIcon className="sg-appbar__burger-button-icon" />}
           </Ripple>
         </SurroundPortals>
       </Button>
