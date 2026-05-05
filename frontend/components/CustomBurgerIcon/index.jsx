@@ -4,7 +4,7 @@ import getConfig from '../../helpers/getConfig';
 const { BurgerSvg } = getConfig();
 
 /**
- * The home icon component.
+ * The custom burger icon component.
  * @param {Object} props The icon component properties.
  * @returns {JSX}
  */
