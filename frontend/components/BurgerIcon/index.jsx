@@ -4,12 +4,12 @@ import Button from '@shopgate/pwa-common/components/Button';
 import BurgerIcon from '@shopgate/pwa-ui-shared/icons/BurgerIcon';
 import Ripple from '@shopgate/pwa-ui-shared/Ripple';
 import SurroundPortals from '@shopgate/pwa-common/components/SurroundPortals';
+import { i18n } from '@shopgate/engage/core';
 import { BROWSE_PATH, PORTAL_BURGER_ICON_CONTENT } from '../../constants';
 import styles from './style';
 import connect from './connector';
 import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
-import { i18n } from '@shopgate/engage/core';
 
 const { BurgerSvg, HamburgerMenuRoute } = getConfig();
 /**
@@ -50,9 +50,9 @@ class Burger extends Component {
     return (
       <Button
         className={`${this.props.isHome
-          ? `${styles.buttonHome} sg-home-button`
+          ? `${styles.buttonHome} sg-appbar__burger-button__home`
           : styles.button
-          } sg-appbar__burger-button`}
+        } sg-appbar__burger-button`}
         aria-label={i18n.text('add_browse_appbar_ios.button_label')}
       >
         <SurroundPortals portalName={PORTAL_BURGER_ICON_CONTENT}>
