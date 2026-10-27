@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IS_PAGE_PREVIEW_ACTIVE } from '@shopgate/engage/page/constants';
-import { isIOSTheme } from '@shopgate-ps/pwa-extension-kit/env/helpers';
+import { isPageAdminPreviewActive } from '@shopgate/engage/admin-preview/helpers';
+import { isIOSTheme } from '@shopgate/engage/core/helpers';
 import BurgerIcon from '../../components/BurgerIcon';
 
 const isIOS = isIOSTheme();
@@ -11,7 +11,7 @@ const isIOS = isIOSTheme();
  * @returns{JSX}
  */
 const AppBarIcons = ({ children }) => {
-  if (IS_PAGE_PREVIEW_ACTIVE) {
+  if (isPageAdminPreviewActive()) {
     return null;
   }
 

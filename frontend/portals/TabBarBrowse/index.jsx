@@ -4,26 +4,19 @@ import getConfig from '../../helpers/getConfig';
 const { HideTabBarBrowse } = getConfig();
 
 /**
- * The home icon component.
- * @param {Object} props The icon component properties.
+ * The TabBarBrowse component.
+ * @param {Object} props The TabBarBrowse component properties.
  * @returns {JSX}
  */
 const TabBarBrowse = (props) => {
-  if (!HideTabBarBrowse) {
-    return props.children;
+  if (HideTabBarBrowse) {
+    return null;
   }
-
-  return (
-    null
-  );
+  return props.children;
 };
 
 TabBarBrowse.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-TabBarBrowse.defaultProps = {
-
 };
 
 export default TabBarBrowse;

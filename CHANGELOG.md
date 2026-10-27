@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 - 2026-10-27
+### Added
+- The burger icon is shown in the frontend settings preview of the admin. It stays hidden in the CMS page preview.
+### Changed
+- 🔥 Breaking change: the extension now requires PWA 7.33.2 or newer.
+- The burger icon is an `IconButton` styled through the theme (`makeStyles`) and reads its data via `useSelector` hooks instead of `connect`.
+### Removed
+- Removed the glamor styling and the `@shopgate-ps/pwa-extension-kit` dependency.
+
 ## 1.2.1 - 2026-05-04
 ### Added
 - Added CSS classes to enable styling

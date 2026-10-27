@@ -1,73 +1,69 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Button from '@shopgate/pwa-common/components/Button';
-import BurgerIcon from '@shopgate/pwa-ui-shared/icons/BurgerIcon';
-import Ripple from '@shopgate/pwa-ui-shared/Ripple';
-import SurroundPortals from '@shopgate/pwa-common/components/SurroundPortals';
-import { i18n } from '@shopgate/engage/core';
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BurgerIcon, SurroundPortals } from '@shopgate/engage/components';
+import { IconButton } from '@shopgate/engage/components/v2';
+import { historyPush } from '@shopgate/engage/core/actions';
+import { i18n } from '@shopgate/engage/core/helpers';
+import { makeStyles } from '@shopgate/engage/styles';
 import { BROWSE_PATH, PORTAL_BURGER_ICON_CONTENT } from '../../constants';
-import styles from './style';
-import connect from './connector';
+import { isBurgerIconVisible, isHome as getIsHome } from '../../selectors';
 import CustomBurgerIcon from '../CustomBurgerIcon';
 import getConfig from '../../helpers/getConfig';
 
 const { BurgerSvg, HamburgerMenuRoute } = getConfig();
+
+const useStyles = makeStyles()({
+  button: {
+    width: 44,
+    height: 44,
+    zIndex: 1,
+  },
+  buttonHome: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  customBurgerIcon: {
+    width: 24,
+  },
+});
+
 /**
- * Component to show the Burger icon that links to the Browse page
+ * Renders the burger icon that links to the browse page.
+ * @returns {JSX.Element|null}
  */
-class Burger extends Component {
-  static propTypes = {
-    historyPush: PropTypes.func.isRequired,
-    isHome: PropTypes.bool.isRequired,
-    isVisible: PropTypes.bool.isRequired,
-    state: PropTypes.shape(),
-  };
+const Burger = () => {
+  const { classes, cx } = useStyles();
+  const dispatch = useDispatch();
+  const isVisible = useSelector(isBurgerIconVisible);
+  const isHome = useSelector(getIsHome);
 
-  static defaultProps = {
-    state: {},
-  };
+  const handleClick = useCallback(() => {
+    dispatch(historyPush({ pathname: HamburgerMenuRoute || BROWSE_PATH }));
+  }, [dispatch]);
 
-  /**
-   * Handles a click on the icon.
-   */
-  handleClick = () => {
-    const params = {
-      pathname: HamburgerMenuRoute || BROWSE_PATH,
-      state: this.props.state || {},
-    };
-    this.props.historyPush(params);
-  };
-
-  /**
-   * Renders the component.
-   * @returns {JSX}
-   */
-  render() {
-    if (!this.props.isVisible) {
-      return null;
-    }
-
-    return (
-      <Button
-        className={`${this.props.isHome
-          ? `${styles.buttonHome} sg-appbar__burger-button--home`
-          : styles.button
-        } sg-appbar__burger-button`}
-        aria-label={i18n.text('add_browse_appbar_ios.button_label')}
-      >
-        <SurroundPortals portalName={PORTAL_BURGER_ICON_CONTENT}>
-          <Ripple
-            className={styles.buttonContent}
-            onComplete={this.handleClick}
-          >
-            {BurgerSvg
-              ? <CustomBurgerIcon className={`${styles.customBurgerIcon} sg-appbar__burger-button-icon`} />
-              : <BurgerIcon className="sg-appbar__burger-button-icon" />}
-          </Ripple>
-        </SurroundPortals>
-      </Button>
-    );
+  if (!isVisible) {
+    return null;
   }
-}
 
-export default connect(Burger);
+  return (
+    <IconButton
+      className={cx(
+        classes.button,
+        isHome && classes.buttonHome,
+        isHome && 'sg-appbar__burger-button--home',
+        'sg-appbar__burger-button'
+      )}
+      aria-label={i18n.text('add_browse_appbar_ios.button_label')}
+      onClick={handleClick}
+    >
+      <SurroundPortals portalName={PORTAL_BURGER_ICON_CONTENT}>
+        {BurgerSvg
+          ? <CustomBurgerIcon className={cx(classes.customBurgerIcon, 'sg-appbar__burger-button-icon')} />
+          : <BurgerIcon className="sg-appbar__burger-button-icon" />}
+      </SurroundPortals>
+    </IconButton>
+  );
+};
+
+export default Burger;
