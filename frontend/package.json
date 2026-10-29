@@ -18,6 +18,6 @@
     "reselect": "^4.1.8"
   },
   "peerDependencies": {
-    "@shopgate/engage": ">=7.33.2"
+    "@shopgate/engage": ">=7.32.0"
   }
 }

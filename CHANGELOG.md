@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - The burger icon is shown in the frontend settings preview of the admin. It stays hidden in the CMS page preview.
 ### Changed
-- 🔥 Breaking change: the extension now requires PWA 7.33.2 or newer.
+- 🔥 Breaking change: the extension now requires PWA 7.32.0 or newer.
 - The burger icon is an `IconButton` styled through the theme (`makeStyles`) and reads its data via `useSelector` hooks instead of `connect`.
 ### Removed
 - Removed the glamor styling and the `@shopgate-ps/pwa-extension-kit` dependency.
