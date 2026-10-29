@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
-import { getCurrentRoute } from '@shopgate/pwa-common/selectors/router';
-import { INDEX_PATH } from '@shopgate/pwa-common/constants/RoutePaths';
+import { getCurrentRoute } from '@shopgate/engage/core/selectors';
+import { INDEX_PATH } from '@shopgate/engage/core/constants';
 import { burgerIconBlacklist } from '../constants';
 
 /**
